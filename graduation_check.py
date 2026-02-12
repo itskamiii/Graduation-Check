@@ -36,3 +36,17 @@ for name, credits in sorted_students:
         print(f"{name}: Ready to Graduate with {credits} credits.")
     else:
         print(f"{name}: Needs {120 - credits} more credits.")
+        
+def check_graduation(name, credits):
+    #Calculates if a student is ready to graduate.
+    if credits >= 120:
+        return f"{name}: Ready to Graduate!"
+    else:
+        return f"{name}: Needs {120 - credits} more credits."
+
+#example of handling bad data
+try:
+    user_credits = int(input("Enter credits to test error handling: "))
+    print(check_graduation("Test Student", user_credits))
+except ValueError:
+    print("Error: Please enter a whole number for credits!")
