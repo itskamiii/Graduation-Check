@@ -18,3 +18,10 @@ for credits in student_credits:
     else:
         remaining = 120 - credits
         print(f"Student with {credits} needs {remaining} more credits.")
+        
+##credit check with dictionary
+students = {"Jandell": 125, "Alex": 98, "Sam", 112, "Jordan": 130}
+
+for name, credits in students.items():
+    if credits >= 120:
+        print(f"{name} is a graduate!")
