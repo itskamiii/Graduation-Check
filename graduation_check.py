@@ -20,8 +20,19 @@ for credits in student_credits:
         print(f"Student with {credits} needs {remaining} more credits.")
         
 ##credit check with dictionary
-students = {"Jandell": 125, "Alex": 98, "Sam", 112, "Jordan": 130}
+student_data = {
+    "Jandell": 125,
+    "Alex": 98,
+    "Sam": 112,
+    "Jordan": 130,
+    "Riley": 85
+}
 
-for name, credits in students.items():
+#we sort by credits (the values) in descending order
+sorted_students = sorted(student_data.items(), key=lambda item: item[1], reverse=True)
+
+for name, credits in sorted_students:
     if credits >= 120:
-        print(f"{name} is a graduate!")
+        print(f"{name}: Ready to Graduate with {credits} credits.")
+    else:
+        print(f"{name}: Needs {120 - credits} more credits.")
